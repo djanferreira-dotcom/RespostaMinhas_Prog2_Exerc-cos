@@ -1,0 +1,17 @@
+● Warning All (-Wall)
+    Habilita a maioria dos avisos do compilador, ajudando a
+identificar problemas no código fonte
+● Warning Extra (-Wextra)
+    Essa opção habilita avisos extras que não são ativados pela
+opção -Wall, como avisos de conversões implícitas de tipos,
+conversões de sinal, etc
+● Warning Error (-Werror):
+    Essa opção faz com que os avisos do compilador sejam tratados
+como erros
+● Depuração (-g)
+    Essa opção habilita a geração de informações de depuração no
+arquivo objeto, permitindo que um depurador, como o GDB, seja
+usado para examinar o código durante a execução.
+
+///////gcc -Wall -Wextra -Werror -g test.c -o test/////
+
