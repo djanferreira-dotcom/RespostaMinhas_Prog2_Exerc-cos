@@ -10,7 +10,7 @@ int main(){
     calcula_area(R);
     calcula_volume(R);
 
-    printf();
+    printf("Area: %.2f\nVolume: %.2f\n",calcula_area(R),calcula_volume(R));
 
     return 0;
 }

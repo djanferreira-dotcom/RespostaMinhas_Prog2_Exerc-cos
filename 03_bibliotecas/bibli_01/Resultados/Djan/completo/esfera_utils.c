@@ -1,4 +1,5 @@
 #include "esfera_utils.h"
+#include <math.h>
 #define PI 3.14
 
 /**
@@ -7,7 +8,7 @@
  * @return O volume da esfera.
  */
 float calcula_volume (float R){
-    return ;
+    return (4*PI*(pow(R,3)))/3;
 }
 
 /**
@@ -16,5 +17,5 @@ float calcula_volume (float R){
  * @return A área de superfície da esfera.
  */
 float calcula_area (float R){
-    return ;
+    return 4*PI*(pow(R,2));
 }
