@@ -1,0 +1,32 @@
+data.c: In function ‘verificaDataValida’:
+data.c:25:76: warning: comparison between pointer and integer
+   25 |     }else if(dia <= 31 && (mes==01||mes==02||mes==03||mes==05||mes==07||mes=="08"||mes=="09"||mes==11)){
+      |                                                                            ^~
+data.c:25:76: warning: comparison with string literal results in unspecified behavior [-Waddress]
+data.c:25:87: warning: comparison between pointer and integer
+   25 |     }else if(dia <= 31 && (mes==01||mes==02||mes==03||mes==05||mes==07||mes=="08"||mes=="09"||mes==11)){
+      |                                                                                       ^~
+data.c:25:87: warning: comparison with string literal results in unspecified behavior [-Waddress]
+data.c: In function ‘imprimeMesExtenso’:
+data.c:41:22: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   41 |             case 1:  printf("Janeiro");
+      |                      ^~~~~~
+data.c:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    1 | #include "data.h"
+  +++ |+#include <stdio.h>
+    2 | 
+data.c:41:22: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
+   41 |             case 1:  printf("Janeiro");
+      |                      ^~~~~~
+data.c:41:22: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+data.c: In function ‘imprimeDataExtenso’:
+data.c:78:5: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
+   78 |     printf("%d de %s de %d\n", dia, mes, ano);
+      |     ^~~~~~
+data.c:78:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+data.c:78:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int’ [-Wformat=]
+   78 |     printf("%d de %s de %d\n", dia, mes, ano);
+      |                   ~^                ~~~
+      |                    |                |
+      |                    char *           int
+      |                   %d
