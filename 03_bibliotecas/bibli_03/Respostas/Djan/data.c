@@ -90,6 +90,7 @@ void imprimeMesExtenso(int mes){
  */
 void imprimeDataExtenso(int dia, int mes, int ano){
 
+    
 }
 
 /**
@@ -118,13 +119,13 @@ int verificaBissexto(int ano){
 int numeroDiasMes(int mes, int ano){
 
     switch(mes){
-    case 1:
     case 2:
             if(mes == 2 && verificaBissexto(ano) == 1){
                 return 29;
             }else{
                 return 28;
             }
+    case 1:
     case 3:
     case 5:
     case 7:
@@ -187,6 +188,21 @@ int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2){
  * @return int Retorna o número de dias até o mês.
 */
 int calculaDiasAteMes(int mes, int ano){
+    
+    int i, total = 0;
+
+    if(verificaBissexto(mes) == 1 && mes == 2){
+        total += numeroDiasMes(mes,ano);
+    }else{
+        total += numeroDiasMes(mes,ano);
+    }
+
+    
+    for(i = 0; i < mes; i++){
+        total += numeroDiasMes(mes,ano);
+    }
+
+    return total;
 
 }
 
@@ -202,5 +218,24 @@ int calculaDiasAteMes(int mes, int ano){
  * @return int Retorna o número de dias de diferença entre as datas.
  */
 int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2){
+    
+    int diasData1 = 0, mesesData1 = 0, anosData1 = 0;
+    int diasData2 = 0, mesesData2 = 0, anosData2 = 0;
+    int diferencaDias = 0;
 
+    anosData1 = (ano1 - 1)*365 + (ano1 - 1)/4 - (ano1 - 1)/100 + (ano1 - 1)/400;
+    anosData2 = (ano2 - 1)*365 + (ano2 - 1)/4 - (ano2 - 1)/100 + (ano2 - 1)/400;
+
+    mesesData1 = calculaDiasAteMes(mes1, ano1);
+    mesesData2 = calculaDiasAteMes(mes2, ano2);
+
+    diasData1 = anosData1 + mesesData1 + dia1;
+    diasData2 = anosData2 + mesesData2 + dia2;
+
+    diferencaDias = diasData2 - diasData1;
+    if(diferencaDias < 0){
+        return diferencaDias = -diferencaDias;
+    }else{
+        return diferencaDias;
+    }
 }
