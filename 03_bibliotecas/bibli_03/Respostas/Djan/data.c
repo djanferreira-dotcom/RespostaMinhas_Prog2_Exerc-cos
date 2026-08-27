@@ -89,8 +89,11 @@ void imprimeMesExtenso(int mes){
  * @param ano Ano da data.
  */
 void imprimeDataExtenso(int dia, int mes, int ano){
-
     
+    printf("Primeira data: %i de ",dia);
+    imprimeMesExtenso(mes);
+    printf(" de %i\n",ano);
+
 }
 
 /**

@@ -1,1 +1,5 @@
-valgrind: Resultados/Djan/completo/prog: No such file or directory
+
+Primeira data: 1 de Janeiro de 2000
+Primeira data: 31 de Dezembro de 2023
+A segunda data eh mais antiga
+A diferenca em dias entre as datas eh: 8772 dias

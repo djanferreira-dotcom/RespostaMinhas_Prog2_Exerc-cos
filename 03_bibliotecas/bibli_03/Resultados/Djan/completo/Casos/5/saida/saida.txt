@@ -1,1 +1,5 @@
-valgrind: Resultados/Djan/completo/prog: No such file or directory
+
+Primeira data: 15 de Julho de 2006
+Primeira data: 15 de Julho de 2006
+As datas sao iguais
+A diferenca em dias entre as datas eh: 0 dias
