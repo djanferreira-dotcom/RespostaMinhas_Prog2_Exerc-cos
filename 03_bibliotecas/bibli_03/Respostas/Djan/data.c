@@ -20,6 +20,16 @@
  * @return int Retorna 1 se a data é válida e 0 caso contrário.
  */
 int verificaDataValida(int dia, int mes, int ano){
+    
+    if(ano > 0 && (mes == 10 || mes == 12 || mes == 1 || mes == 3 || mes == 5 || (mes >= 7 && mes <= 8)) && (dia >= 1 && dia <= 31)){
+        return 1;
+    }else if(ano > 0 && (mes == 4 || mes == 6 || mes == 9 || mes == 11) && (dia >= 1 && dia <= 30)){
+        return 1;
+    }else if((verificaBissexto(ano) == 1 && (dia >= 1 && dia <= 29) && mes == 2) || (verificaBissexto(ano) != 1 && (dia >= 1 && dia <= 28) && mes == 2)){
+        return 1;
+    }else{
+        return 0;
+    }
 
 }
 
@@ -29,7 +39,46 @@ int verificaDataValida(int dia, int mes, int ano){
  * @param mes Mês a ser impresso.
  */
 void imprimeMesExtenso(int mes){
-   
+    
+    switch (mes){
+    case 1:
+        printf("Janeiro");
+        break;
+    case 2:
+    printf("Fevereiro");
+        break;
+    case 3:
+        printf("Março");
+        break;
+    case 4:
+        printf("Abril");
+        break;
+    case 5:
+        printf("Maio");
+        break;
+    case 6:
+        printf("Junho");
+        break;
+    case 7:
+        printf("Julho");
+        break;
+    case 8:
+        printf("Agosto");
+        break;
+    case 9:
+        printf("Setembro");
+        break;
+    case 10:
+        printf("Outubro");
+        break;
+    case 11:
+        printf("Novembro");
+        break;
+    case 12:
+        printf("Dezembro");
+        break;                          
+    }
+
 }
 
 /**
@@ -68,6 +117,28 @@ int verificaBissexto(int ano){
  */
 int numeroDiasMes(int mes, int ano){
 
+    switch(mes){
+    case 1:
+    case 2:
+            if(mes == 2 && verificaBissexto(ano) == 1){
+                return 29;
+            }else{
+                return 28;
+            }
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        return 31;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        return 30;
+    }
+    
 }
 
 /**
