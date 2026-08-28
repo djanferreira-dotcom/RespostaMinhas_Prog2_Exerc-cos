@@ -1,4 +1,5 @@
 #include "data.h"
+#include <stdio.h>
 
 /**
  * @file data.h
@@ -21,12 +22,20 @@
  */
 int verificaDataValida(int dia, int mes, int ano){
     
-    if(ano > 0 && (mes == 10 || mes == 12 || mes == 1 || mes == 3 || mes == 5 || (mes >= 7 && mes <= 8)) && (dia >= 1 && dia <= 31)){
+    if(ano < 0){
+        return 0;
+    }
+
+    if((mes == 10 || mes == 12 || mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8) && (dia >= 1 && dia <= 31)){
         return 1;
-    }else if(ano > 0 && (mes == 4 || mes == 6 || mes == 9 || mes == 11) && (dia >= 1 && dia <= 30)){
+    }else if((mes == 4 || mes == 6 || mes == 9 || mes == 11) && (dia >= 1 && dia <= 30)){
         return 1;
-    }else if((verificaBissexto(ano) == 1 && (dia >= 1 && dia <= 29) && mes == 2) || (verificaBissexto(ano) != 1 && (dia >= 1 && dia <= 28) && mes == 2)){
-        return 1;
+    }else if(mes == 2){
+        if(verificaBissexto(ano) == 1 && dia >= 1 && dia <= 29){
+            return 1;
+        }else if(verificaBissexto(ano) != 1 && dia >= 1 && dia <= 29){
+            return 1;
+        }
     }else{
         return 0;
     }
@@ -45,7 +54,7 @@ void imprimeMesExtenso(int mes){
         printf("Janeiro");
         break;
     case 2:
-    printf("Fevereiro");
+        printf("Fevereiro");
         break;
     case 3:
         printf("Março");
@@ -90,9 +99,9 @@ void imprimeMesExtenso(int mes){
  */
 void imprimeDataExtenso(int dia, int mes, int ano){
     
-    printf("Primeira data: %i de ",dia);
+    printf("data: %02d de ",dia);
     imprimeMesExtenso(mes);
-    printf(" de %i\n",ano);
+    printf(" de %d\n",ano);
 
 }
 
@@ -122,12 +131,6 @@ int verificaBissexto(int ano){
 int numeroDiasMes(int mes, int ano){
 
     switch(mes){
-    case 2:
-            if(mes == 2 && verificaBissexto(ano) == 1){
-                return 29;
-            }else{
-                return 28;
-            }
     case 1:
     case 3:
     case 5:
@@ -141,8 +144,15 @@ int numeroDiasMes(int mes, int ano){
     case 9:
     case 11:
         return 30;
+    case 2:
+            if(mes == 2 && verificaBissexto(ano) == 1){
+                return 29;
+            }else{
+                return 28;
+            }
     }
-    
+
+    return 0;
 }
 
 /**
@@ -193,16 +203,9 @@ int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2){
 int calculaDiasAteMes(int mes, int ano){
     
     int i, total = 0;
-
-    if(verificaBissexto(mes) == 1 && mes == 2){
-        total += numeroDiasMes(mes,ano);
-    }else{
-        total += numeroDiasMes(mes,ano);
-    }
-
     
-    for(i = 0; i < mes; i++){
-        total += numeroDiasMes(mes,ano);
+    for(i = 1; i < mes; i++){
+        total += numeroDiasMes(i,ano);
     }
 
     return total;
@@ -237,7 +240,7 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
 
     diferencaDias = diasData2 - diasData1;
     if(diferencaDias < 0){
-        return diferencaDias = -diferencaDias;
+        return -diferencaDias;
     }else{
         return diferencaDias;
     }

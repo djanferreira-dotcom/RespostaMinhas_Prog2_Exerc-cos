@@ -1,21 +1,4 @@
-data.c: In function ‘imprimeMesExtenso’:
-data.c:45:9: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
-   45 |         printf("Janeiro");
-      |         ^~~~~~
-data.c:2:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-    1 | #include "data.h"
-  +++ |+#include <stdio.h>
-    2 | 
-data.c:45:9: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
-   45 |         printf("Janeiro");
-      |         ^~~~~~
-data.c:45:9: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-data.c: In function ‘imprimeDataExtenso’:
-data.c:93:5: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
-   93 |     printf("Primeira data: %i de ",dia);
-      |     ^~~~~~
-data.c:93:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
-data.c: In function ‘numeroDiasMes’:
-data.c:146:1: warning: control reaches end of non-void function [-Wreturn-type]
-  146 | }
+data.c: In function ‘verificaDataValida’:
+data.c:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+   43 | }
       | ^
