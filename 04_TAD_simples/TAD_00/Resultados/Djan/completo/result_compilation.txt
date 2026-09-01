@@ -1,0 +1,61 @@
+ponto.c:17:8: error: redefinition of ‘struct ponto’
+   17 | struct ponto {
+      |        ^~~~~
+In file included from ponto.c:11:
+ponto.h:15:8: note: originally defined here
+   15 | struct ponto {
+      |        ^~~~~
+ponto.c:21:22: error: conflicting types for ‘Ponto’; have ‘struct ponto’
+   21 | typedef struct ponto Ponto;
+      |                      ^~~~~
+ponto.h:19:22: note: previous declaration of ‘Ponto’ with type ‘Ponto’ {aka ‘struct ponto’}
+   19 | typedef struct ponto Ponto;
+      |                      ^~~~~
+ponto.c:28:7: error: conflicting types for ‘pto_cria’; have ‘Ponto(float,  float)’ {aka ‘struct ponto(float,  float)’}
+   28 | Ponto pto_cria (float x, float y){
+      |       ^~~~~~~~
+ponto.h:26:7: note: previous declaration of ‘pto_cria’ with type ‘Ponto(float,  float)’ {aka ‘struct ponto(float,  float)’}
+   26 | Ponto pto_cria (float x, float y);
+      |       ^~~~~~~~
+ponto.c:38:7: error: conflicting types for ‘pto_acessa_x’; have ‘float(Ponto)’ {aka ‘float(struct ponto)’}
+   38 | float pto_acessa_x (Ponto p){
+      |       ^~~~~~~~~~~~
+ponto.h:31:7: note: previous declaration of ‘pto_acessa_x’ with type ‘float(Ponto)’ {aka ‘float(struct ponto)’}
+   31 | float pto_acessa_x (Ponto p);
+      |       ^~~~~~~~~~~~
+ponto.c:45:7: error: conflicting types for ‘pto_acessa_y’; have ‘float(Ponto)’ {aka ‘float(struct ponto)’}
+   45 | float pto_acessa_y (Ponto p){
+      |       ^~~~~~~~~~~~
+ponto.h:36:7: note: previous declaration of ‘pto_acessa_y’ with type ‘float(Ponto)’ {aka ‘float(struct ponto)’}
+   36 | float pto_acessa_y (Ponto p);
+      |       ^~~~~~~~~~~~
+ponto.c:52:7: error: conflicting types for ‘pto_atribui_x’; have ‘Ponto(Ponto,  float)’ {aka ‘struct ponto(struct ponto,  float)’}
+   52 | Ponto pto_atribui_x (Ponto p, float x){
+      |       ^~~~~~~~~~~~~
+ponto.h:41:7: note: previous declaration of ‘pto_atribui_x’ with type ‘Ponto(Ponto,  float)’ {aka ‘struct ponto(struct ponto,  float)’}
+   41 | Ponto pto_atribui_x (Ponto p, float x);
+      |       ^~~~~~~~~~~~~
+ponto.c:59:7: error: conflicting types for ‘pto_atribui_y’; have ‘Ponto(Ponto,  float)’ {aka ‘struct ponto(struct ponto,  float)’}
+   59 | Ponto pto_atribui_y (Ponto p, float y){
+      |       ^~~~~~~~~~~~~
+ponto.h:46:7: note: previous declaration of ‘pto_atribui_y’ with type ‘Ponto(Ponto,  float)’ {aka ‘struct ponto(struct ponto,  float)’}
+   46 | Ponto pto_atribui_y (Ponto p, float y);
+      |       ^~~~~~~~~~~~~
+ponto.c:66:7: error: conflicting types for ‘pto_distancia’; have ‘float(Ponto,  Ponto)’ {aka ‘float(struct ponto,  struct ponto)’}
+   66 | float pto_distancia (Ponto p1, Ponto p2){
+      |       ^~~~~~~~~~~~~
+ponto.h:51:7: note: previous declaration of ‘pto_distancia’ with type ‘float(Ponto,  Ponto)’ {aka ‘float(struct ponto,  struct ponto)’}
+   51 | float pto_distancia (Ponto p1, Ponto p2);
+      |       ^~~~~~~~~~~~~
+ponto.c: In function ‘pto_distancia’:
+ponto.c:67:29: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   67 |     return sqrt((p2.x - p1.x,2)+pow(p2.y - p1.x,2));
+      |                             ^
+ponto.c: In function ‘pto_atribui_x’:
+ponto.c:54:1: warning: control reaches end of non-void function [-Wreturn-type]
+   54 | }
+      | ^
+ponto.c: In function ‘pto_atribui_y’:
+ponto.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+   61 | }
+      | ^
