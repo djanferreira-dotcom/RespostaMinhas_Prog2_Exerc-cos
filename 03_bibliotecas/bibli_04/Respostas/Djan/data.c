@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "data.h"
 
+//Pronto,o caso numero 5 ou 6, está bugado, pois fevereiro só vai até 29 quando bissexto.
+
 /**
  * @file data.h
  * @brief Biblioteca para manipulação de datas.
