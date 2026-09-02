@@ -13,13 +13,6 @@
 
 /* TAD: Ponto (x,y) */
 
-/* Tipo exportado */
-struct ponto {
-	float x;
-	float y;
-};
-typedef struct ponto Ponto;
-
 /* Funcoes exportadas */
 
 /* Funcao cria 
@@ -54,7 +47,7 @@ Ponto pto_atribui_x (Ponto p, float x){
 }
 
 /* Funcao atribui y
-** Atribui novo valor as coordenada x de um ponto
+** Atribui novo valor as coordenada y de um ponto
 */
 Ponto pto_atribui_y (Ponto p, float y){
     p.y = y;
@@ -64,6 +57,6 @@ Ponto pto_atribui_y (Ponto p, float y){
 ** Retorna a distancia entre dois pontos
 */
 float pto_distancia (Ponto p1, Ponto p2){
-    return sqrt((p2.x - p1.x,2)+pow(p2.y - p1.x,2));
+    return sqrt(pow((p2.x - p1.x), 2)+pow((p2.y - p1.y),2));
     //d = sqrt(x2-x1 elevado a 2 + y2 - y1);
 }
