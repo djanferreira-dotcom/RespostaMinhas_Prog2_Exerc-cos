@@ -1,4 +1,5 @@
-#include <stdio.h>
+#ifndef _VETOR_H_
+#define _VETOR_H_
 
 /**
  * @brief Lê dados do usuário e armazena em um vetor.
@@ -8,14 +9,7 @@
  * @param vet Ponteiro para o vetor que receberá os valores lidos.
  * @param tam Tamanho do vetor.
  */
-void LeDadosParaVetor(int * vet, int tam){
-    
-    int i;
-    
-    for(i = 0; i < tam; i++){
-        scanf("%d", &vet[i]);
-    }
-}
+void LeDadosParaVetor(int * vet, int tam);
 
 /**
  * @brief Imprime os dados de um vetor na tela.
@@ -25,16 +19,7 @@ void LeDadosParaVetor(int * vet, int tam){
  * @param n Ponteiro para o vetor a ser impresso.
  * @param tam Tamanho do vetor.
  */
-void ImprimeDadosDoVetor(int * n, int tam){
-    
-    int i;
-    
-    for(i = 0; i < tam; i++){
-        printf("%d ", n[i]);
-    }
-    printf("\n");
-
-}
+void ImprimeDadosDoVetor(int * n, int tam);
 
 /**
  * @brief Troca o valor de duas variáveis se o segundo for menor que o primeiro.
@@ -48,15 +33,7 @@ void ImprimeDadosDoVetor(int * n, int tam){
  * @param tam Tamanho do vetor.
  * @param paraTrocar Ponteiro para a variável que armazenará o índice do menor valor encontrado.
  */
-void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
-    int i;
-
-    for(i = *paraTrocar + 1; i < tam; i++){
-        if(vet[i] < vet[*paraTrocar]){
-            *paraTrocar = i;
-        }
-    }
-}
+void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar);
 
 /**
  * @brief Ordena um vetor em ordem crescente.
@@ -66,19 +43,6 @@ void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
  * @param vet Ponteiro para o vetor a ser ordenado.
  * @param tam Tamanho do vetor.
  */
-void OrdeneCrescente(int * vet, int tam){
-    
-    int i, temp, menor;
+void OrdeneCrescente(int * vet, int tam);
 
-    for(i = 0; i < tam; i++){
-        
-        menor = i;
-        
-        TrocaSeAcharMenor(vet, tam, &menor);
-
-        temp = vet[i];
-        vet[i] = vet[menor];
-        vet[menor] = temp;
-    
-    }
-}
+#endif
