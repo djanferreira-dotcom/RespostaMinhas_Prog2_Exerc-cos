@@ -74,4 +74,10 @@ void AvancaParaDiaSeguinte( tData *data );
  * @param data2 Ponteiro para a segunda estrutura tData que será comparada.
  * @return 1 se as datas são iguais, 0 caso contrário.
  */
-int EhIgual( tData *data1, tData *data2 );
+int EhIgual( tData *data1, tData *data2 ){
+    if((data1->ano == data2->ano) && (data1->mes == data2->mes) && (data1->dia == data2->dia)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
