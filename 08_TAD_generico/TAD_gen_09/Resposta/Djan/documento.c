@@ -6,7 +6,9 @@
 /*
     Estrutura do tipo Documento contendo os atributos necessários para a manipulação
 */
-typedef struct _Documento Documento;
+struct _Documento{
+
+}
 
 /*
     Definição dos tipo ponteiro para função utilizado para imprimir um documento genérico

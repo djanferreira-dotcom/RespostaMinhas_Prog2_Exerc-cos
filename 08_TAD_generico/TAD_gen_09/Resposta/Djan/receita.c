@@ -6,10 +6,10 @@
     Estrutura do tipo Receita contendo os atributos necessários para a manipulação
 */
 struct _Receita{
-    char nomeMedicamento;
-    char nomePaciente; 
-    char nomeMedico; 
-    char instrucoes;
+    char nomeMedicamento[100];
+    char nomePaciente[100]; 
+    char nomeMedico[100]; 
+    char instrucoes[200];
 };
 
 /*
