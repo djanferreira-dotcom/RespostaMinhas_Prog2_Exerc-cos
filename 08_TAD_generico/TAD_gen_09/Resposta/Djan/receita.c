@@ -2,14 +2,18 @@
 #include <string.h>
 #include "receita.h"
 
+#define MAX_TAM_MEDICAMENTO 100
+#define MAX_TAM_PACIENTE 100
+#define MAX_TAM_MEDICO 100
+#define MAX_TAM_INSTRUCOES 100
 /*
     Estrutura do tipo Receita contendo os atributos necessários para a manipulação
 */
 struct _Receita{
-    char nomeMedicamento[100];
-    char nomePaciente[100]; 
-    char nomeMedico[100]; 
-    char instrucoes[200];
+    char nomeMedicamento[MAX_TAM_MEDICAMENTO];
+    char nomePaciente[MAX_TAM_PACIENTE]; 
+    char nomeMedico[MAX_TAM_MEDICO]; 
+    char instrucoes[MAX_TAM_INSTRUCOES];
 };
 
 /*
@@ -21,7 +25,15 @@ struct _Receita{
     @return: endereço de memória da receita criada
 */
 Receita *criaReceita(char *nomeMedicamento, char *nomePaciente, char *nomeMedico, char *instrucoes){
-
+    
+    Receita r;
+    
+    strcpy(nomeMedicamento,r.nomeMedicamento);
+    strcpy(nomePaciente,r.nomePaciente);
+    strcpy(nomeMedico,r.nomeMedico);
+    strcpy(instrucoes,r.instrucoes);
+    
+    return r;
 }
 
 /*

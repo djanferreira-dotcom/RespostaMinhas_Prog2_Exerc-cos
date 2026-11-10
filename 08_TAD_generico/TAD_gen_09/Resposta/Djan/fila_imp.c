@@ -6,7 +6,8 @@
     Estrutura do tipo FilaImp contendo os atributos necessários para a manipulação
 */
 struct _FilaImp{
-
+    Documento **docs;
+    int qtnd;
 }
 
 /*
