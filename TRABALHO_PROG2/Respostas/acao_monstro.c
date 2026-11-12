@@ -1,11 +1,11 @@
-#ifndef _ACAO_MONSTRO_H_
-#define _ACAO_MONSTRO_H_
-
+#include <stdio.h>
+#include <stdlib.h>
+#include "acao_monstro.h"
 #include "jogador.h"
 
-#define MAX_TAM_NOME_MONSTRO 21
+struct Monstro{
 
-typedef struct Monstro Monstro;
+};
 
 /**
  * @brief Aloca dinamicamente uma ação do tipo MONSTRO e guarda nela o nome (copiado), a força e a XP
@@ -45,6 +45,6 @@ void imprimeMonstro(void *dado);
  * @brief Converte o dado genérico para monstro e libera a memória alocada para ele
  * @param dado Ponteiro genérico para o monstro
  */
-void desalocaMonstro(void *dado);
-
-#endif // _ACAO_MONSTRO_H_
+void desalocaMonstro(void *dado){
+    
+}

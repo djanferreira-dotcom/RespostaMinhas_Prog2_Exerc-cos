@@ -1,13 +1,15 @@
-#ifndef _MAPA_H_
-#define _MAPA_H_
-
+#include <stdio.h>
+#include <stdlib.h>
+#include "mapa.h"
 #include "celula.h"
 
 /**
  * Mapa linear (trilha) composto por células. As células informadas são numeradas de 1 a N.
  * O Início (casa 0) e o Fim (casa N + 1) não possuem ação e não são armazenados como células.
  */
-typedef struct Mapa Mapa;
+struct Mapa{
+
+};
 
 /**
  * @brief Aloca dinamicamente um mapa sem nenhuma célula (vetor de células NULL e quantidade 0)
@@ -100,5 +102,3 @@ void imprimeCelulasMapa(Mapa *m);
  * @param m Mapa
  */
 void desalocaMapa(Mapa *m);
-
-#endif // _MAPA_H_

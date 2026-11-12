@@ -1,21 +1,21 @@
-#ifndef _CELULA_H_
-#define _CELULA_H_
-
+#include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
+#include "celula.h"
 #include "jogador.h"
-
 /**
  * Valor especial retornado pela execução de uma ação para indicar que o jogador deve recuar
  * (ex: perdeu o confronto com um monstro). O recuo depende da ocupação do mapa e, por isso,
  * não é um deslocamento fixo: quem trata é o módulo que conduz a partida.
  */
-#define RECUO_CELULA INT_MIN
 
 /**
  * Estrutura de uma Célula do mapa contendo os parâmetros comuns a todas as células e uma ação genérica
  * (OURO, MONSTRO, ITEM, AVANCA, VOLTA, VAZIA...). Cada célula comporta no máximo um jogador.
  */
-typedef struct Celula Celula;
+struct Celula{
+
+};
 
 /**
  * @brief Função de callback para executar a ação de uma célula sobre um jogador. A função deve
@@ -103,5 +103,3 @@ void imprimeCelula(Celula *c, int posicao);
  * @param c Célula a ser liberada
  */
 void desalocaCelula(Celula *c);
-
-#endif // _CELULA_H_

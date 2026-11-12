@@ -1,10 +1,14 @@
-#ifndef _JOGADOR_H_
-#define _JOGADOR_H_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "jogador.h"
 
 #define MAX_TAM_NOME_JOGADOR 51
 #define MAX_TAM_COR_JOGADOR 16
 
-typedef struct Jogador Jogador;
+struct Jogador{
+    
+};
 
 /**
  * @brief Aloca dinamicamente um jogador e copia o nome e a cor informados. O jogador inicia no
@@ -192,5 +196,3 @@ void printRelatorioJogador(void *dado);
  * @param dado Ponteiro genérico para o jogador
  */
 void desalocaJogador(void *dado);
-
-#endif // _JOGADOR_H_
